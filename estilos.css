@@ -1,6 +1,6 @@
-/* ==========================================
+/* ==========================================================================
    1. CONFIGURACIÓN GENERAL Y FUENTES
-   ========================================== */
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
 
 body {
@@ -29,9 +29,10 @@ section h2 {
     font-size: 1.8rem;
 }
 
-/* ==========================================
-   2. ESTRUCTURA PRINCIPAL (HEADER, NAV, FOOTER)
-   ========================================== */
+
+/* ==========================================================================
+   2. ESTRUCTURA PRINCIPAL (HEADER, NAV & FOOTER)
+   ========================================================================== */
 header {
     background-color: #6B1D2F;
     color: white;
@@ -98,11 +99,12 @@ footer p {
     margin: 4px 0;
 }
 
-/* ==========================================
-   3. ESTILOS DE SECCIONES ESPECÍFICAS
-   ========================================== */
 
-/* --- Inicio --- */
+/* ==========================================================================
+   3. ESTILOS DE SECCIONES ESPECÍFICAS
+   ========================================================================== */
+
+/* --- Sección: Inicio (Banner) --- */
 .banner img {
     width: 100%;
     height: 400px;
@@ -119,7 +121,7 @@ footer p {
     box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
 
-/* --- Desarrollo --- */
+/* --- Sección: Desarrollo del Producto --- */
 #desarrollo ul {
     list-style: none;
     padding: 0;
@@ -166,7 +168,7 @@ footer p {
     line-height: 1.6;
 }
 
-/* --- Investigación --- */
+/* --- Sección: Investigación (Fichas Técnicas) --- */
 .galeria-fichas {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -205,9 +207,16 @@ footer p {
     box-sizing: border-box;
     display: block;
     margin: 0 auto;
+    cursor: zoom-in;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* --- Galería --- */
+.tarjeta-ficha-img img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(107, 29, 47, 0.15);
+}
+
+/* --- Sección: Galería de Fotos --- */
 .galeria {
     display: flex;
     justify-content: center;
@@ -228,7 +237,7 @@ footer p {
     transform: scale(1.03);
 }
 
-/* --- Contacto --- */
+/* --- Sección: Contacto (Contenedor Google Forms) --- */
 .contenedor-formulario {
     max-width: 850px; 
     margin: 20px auto;
@@ -239,7 +248,7 @@ footer p {
     box-sizing: border-box;
 }
 
-/* --- Video Responsivo --- */
+/* --- Sección: Video Promocional (Reproductor Responsivo 16:9) --- */
 .contenedor-video {
     position: relative;
     padding-bottom: 56.25%; 
@@ -261,50 +270,7 @@ footer p {
     border: 0;
 }
 
-/* --- Productos --- */
-.contenedor {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.producto {
-    background-color: white;
-    width: 250px;
-    margin: 15px;
-    padding: 20px;
-    text-align: center;
-    border-radius: 12px;
-    border-top: 4px solid #D97706;
-    box-shadow: 0px 4px 15px rgba(107, 29, 47, 0.06);
-    transition: transform 0.3s ease;
-}
-
-.producto:hover {
-    transform: translateY(-5px);
-}
-
-.producto img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 6px;
-}
-
-.producto h3 {
-    margin: 15px 0 8px 0;
-    color: #6B1D2F;
-}
-
-.producto p {
-    font-weight: 600;
-    color: #D97706;
-    font-size: 1.15rem;
-    margin: 0;
-}
-
-/* --- Tabla de Precios --- */
+/* --- Sección: Tabla de Precios --- */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -336,9 +302,12 @@ table tr:nth-child(even) {
     background-color: #FAFAFA;
 }
 
-/* ==========================================
-   4. CLASES COMPLEMENTARIAS (JAVASCRIPT)
-   ========================================== */
+
+/* ==========================================================================
+   4. CLASES COMPLEMENTARIAS PARA SCRIPTS (JAVASCRIPT)
+   ========================================================================== */
+
+/* --- Estilo Activo para el Menú Inteligente --- */
 nav ul li a.activo {
     color: #FCD34D !important;          
     background-color: #6B1D2F;         
@@ -346,6 +315,7 @@ nav ul li a.activo {
     padding-bottom: 13px;              
 }
 
+/* --- Animaciones para la Aparición Gradual --- */
 .oculto-gradual {
     opacity: 0;
     transform: translateY(30px);       
@@ -356,4 +326,160 @@ nav ul li a.activo {
 .visible-gradual {
     opacity: 1;
     transform: translateY(0);          
+}
+
+
+/* ==========================================================================
+   5. DISEÑO DE LA VENTANA FLOTANTE (MODAL DE FICHAS TÉCNICAS)
+   ========================================================================== */
+#modal-ficha {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(45, 34, 30, 0.9);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.modal-oculto {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+#img-modal {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    padding: 10px;
+}
+
+.boton-cerrar {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #F3EFEA;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.boton-cerrar:hover {
+    color: #FCD34D;
+}
+
+
+/* ==========================================================================
+   6. EFECTO INTERACTIVO DE CORTINA DESLIZABLE PARA PRODUCTOS
+   ========================================================================== */
+.contenedor {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.producto {
+    background-color: white;
+    width: 250px;
+    height: 300px;             /* Altura fija para el control de la cortina */
+    margin: 15px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(107, 29, 47, 0.06);
+    position: relative;        /* Eje de coordenadas para los elementos flotantes */
+    overflow: hidden;          /* Recorta la cortina y textos fuera de la tarjeta */
+    transition: box-shadow 0.3s ease;
+}
+
+/* La imagen ocupa la totalidad del contenedor del producto */
+.producto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* La cortina de color tinto que se encuentra escondida abajo */
+.producto::before {
+    content: "";
+    position: absolute;
+    bottom: -100%;             /* Completamente oculta al inicio */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #6B1D2F 70%, rgba(107, 29, 47, 0.8));
+    z-index: 1;
+    transition: bottom 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Modificación absoluta de textos h3 y p dentro de productos */
+.producto h3, .producto p {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    color: white !important;   /* Texto blanco para leerse sobre el fondo tinto */
+    margin: 0;
+    padding: 0 15px;
+    box-sizing: border-box;
+    opacity: 0;                /* Oculto por defecto */
+    transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+/* Desplazamiento inicial hacia abajo de las etiquetas de texto */
+.producto h3 {
+    bottom: 110px;
+    font-size: 1.3rem;
+    transform: translateY(30px);
+}
+
+.producto p {
+    bottom: 60px;
+    color: #FCD34D !important; /* Destaca el precio en amarillo */
+    font-size: 1.4rem;
+    font-weight: bold;
+    transform: translateY(40px);
+}
+
+/* --- ANIMACIÓN DISPARADA POR EL CURSOR (HOVER) --- */
+
+/* Zoom sutil a la foto */
+.producto:hover img {
+    transform: scale(1.05);
+}
+
+/* La cortina asciende completamente */
+.producto:hover::before {
+    bottom: 0;
+}
+
+/* Los textos vuelven a su posición e incrementan opacidad */
+.producto:hover h3, .producto:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* El precio lleva un micro-retraso dinámico al subir */
+.producto:hover p {
+    transition-delay: 0.08s;
+}
+
+/* Resalte de sombra en la tarjeta activa */
+.producto:hover {
+    box-shadow: 0px 12px 25px rgba(45, 34, 30, 0.25);
 }
