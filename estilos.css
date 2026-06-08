@@ -1,13 +1,13 @@
-﻿/* ==========================================================================
+/* ==========================================
    1. CONFIGURACIÓN GENERAL Y FUENTES
-   ========================================================================== */
+   ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
 
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
-    background-color: #EBF0F5;        /* Gris ártico limpio */
-    color: #2D221E;                   /* Marrón oscuro original */
+    background-color: #EBF0F5;
+    color: #2D221E;
 }
 
 h1, h2, h3, h4 {
@@ -15,7 +15,6 @@ h1, h2, h3, h4 {
     font-weight: 600;
 }
 
-/* Contenedor genérico para las secciones de la página */
 section {
     padding: 40px 20px;
     max-width: 1100px;
@@ -24,20 +23,17 @@ section {
 
 section h2 {
     color: #6B1D2F;
-    border-bottom: 2px solid #D97706; /* Subrayado naranja */
+    border-bottom: 2px solid #D97706;
     padding-bottom: 8px;
     margin-bottom: 25px;
     font-size: 1.8rem;
 }
 
-
-/* ==========================================================================
-   2. ESTRUCTURA PRINCIPAL (HEADER, NAV & FOOTER)
-   ========================================================================== */
-
-/* --- Header --- */
+/* ==========================================
+   2. ESTRUCTURA PRINCIPAL (HEADER, NAV, FOOTER)
+   ========================================== */
 header {
-    background-color: #6B1D2F;        /* Vino tinto elegante */
+    background-color: #6B1D2F;
     color: white;
     text-align: center;
     padding: 35px 20px;
@@ -56,9 +52,8 @@ header p {
     font-style: italic;
 }
 
-/* --- Menú de Navegación --- */
 nav {
-    background-color: #521321;        /* Vino oscuro profundo */
+    background-color: #521321;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -84,11 +79,10 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #FCD34D;                   /* Amarillo cálido */
+    color: #FCD34D;
     background-color: #6B1D2F;
 }
 
-/* --- Footer --- */
 footer {
     background-color: #2D221E;
     color: #F3EFEA;
@@ -104,12 +98,11 @@ footer p {
     margin: 4px 0;
 }
 
-
-/* ==========================================================================
+/* ==========================================
    3. ESTILOS DE SECCIONES ESPECÍFICAS
-   ========================================================================== */
+   ========================================== */
 
-/* --- Sección: Inicio (Banner) --- */
+/* --- Inicio --- */
 .banner img {
     width: 100%;
     height: 400px;
@@ -122,11 +115,11 @@ footer p {
     padding: 20px;
     margin: 20px 0 0 0;
     border-radius: 8px;
-    border-left: 5px solid #D97706;   /* Detalle lateral naranja */
+    border-left: 5px solid #D97706;
     box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
 
-/* --- Sección: Desarrollo del Producto --- */
+/* --- Desarrollo --- */
 #desarrollo ul {
     list-style: none;
     padding: 0;
@@ -173,7 +166,7 @@ footer p {
     line-height: 1.6;
 }
 
-/* --- Sección: Investigación (Fichas Técnicas) --- */
+/* --- Investigación --- */
 .galeria-fichas {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -214,7 +207,7 @@ footer p {
     margin: 0 auto;
 }
 
-/* --- Sección: Galería de Fotos --- */
+/* --- Galería --- */
 .galeria {
     display: flex;
     justify-content: center;
@@ -235,7 +228,7 @@ footer p {
     transform: scale(1.03);
 }
 
-/* --- Sección: Contacto (Contenedor Google Forms) --- */
+/* --- Contacto --- */
 .contenedor-formulario {
     max-width: 850px; 
     margin: 20px auto;
@@ -246,16 +239,16 @@ footer p {
     box-sizing: border-box;
 }
 
-/* --- Sección: Video Promocional (Reproductor Responsivo 16:9) --- */
+/* --- Video Responsivo --- */
 .contenedor-video {
     position: relative;
-    padding-bottom: 56.25%; /* Relación de aspecto exacta para videos de YouTube */
+    padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
-    max-width: 800px;       /* Evita que el video se descontrole en pantallas grandes */
-    margin: 0 auto;         /* Centra el reproductor horizontalmente */
+    max-width: 800px;       
+    margin: 0 auto;         
     border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(107, 29, 47, 0.1); /* Sombra elegante basada en tu vino tinto */
+    box-shadow: 0 6px 20px rgba(107, 29, 47, 0.1); 
     border: 1px solid #EAE4DC;
 }
 
@@ -268,7 +261,7 @@ footer p {
     border: 0;
 }
 
-/* --- Sección: Productos (Tarjetas de Venta) --- */
+/* --- Productos --- */
 .contenedor {
     display: flex;
     justify-content: center;
@@ -311,7 +304,7 @@ footer p {
     margin: 0;
 }
 
-/* --- Sección: Tabla de Precios --- */
+/* --- Tabla de Precios --- */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -341,4 +334,26 @@ th, td {
 
 table tr:nth-child(even) {
     background-color: #FAFAFA;
+}
+
+/* ==========================================
+   4. CLASES COMPLEMENTARIAS (JAVASCRIPT)
+   ========================================== */
+nav ul li a.activo {
+    color: #FCD34D !important;          
+    background-color: #6B1D2F;         
+    border-bottom: 3px solid #D97706;  
+    padding-bottom: 13px;              
+}
+
+.oculto-gradual {
+    opacity: 0;
+    transform: translateY(30px);       
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.visible-gradual {
+    opacity: 1;
+    transform: translateY(0);          
 }
