@@ -29,7 +29,6 @@ section h2 {
     font-size: 1.8rem;
 }
 
-
 /* ==========================================================================
    2. ESTRUCTURA PRINCIPAL (HEADER, NAV & FOOTER)
    ========================================================================== */
@@ -99,12 +98,9 @@ footer p {
     margin: 4px 0;
 }
 
-
 /* ==========================================================================
    3. ESTILOS DE SECCIONES ESPECÍFICAS
    ========================================================================== */
-
-/* --- Sección: Inicio (Banner) --- */
 .banner img {
     width: 100%;
     height: 400px;
@@ -121,7 +117,6 @@ footer p {
     box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
 
-/* --- Sección: Desarrollo del Producto --- */
 #desarrollo ul {
     list-style: none;
     padding: 0;
@@ -168,7 +163,7 @@ footer p {
     line-height: 1.6;
 }
 
-/* --- Sección: Investigación (Fichas Técnicas) --- */
+/* --- Fichas Técnicas --- */
 .galeria-fichas {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -216,7 +211,7 @@ footer p {
     box-shadow: 0 4px 15px rgba(107, 29, 47, 0.15);
 }
 
-/* --- Sección: Galería de Fotos --- */
+/* --- Galería --- */
 .galeria {
     display: flex;
     justify-content: center;
@@ -237,7 +232,6 @@ footer p {
     transform: scale(1.03);
 }
 
-/* --- Sección: Contacto (Contenedor Google Forms) --- */
 .contenedor-formulario {
     max-width: 850px; 
     margin: 20px auto;
@@ -248,7 +242,6 @@ footer p {
     box-sizing: border-box;
 }
 
-/* --- Sección: Video Promocional (Reproductor Responsivo 16:9) --- */
 .contenedor-video {
     position: relative;
     padding-bottom: 56.25%; 
@@ -270,7 +263,7 @@ footer p {
     border: 0;
 }
 
-/* --- Sección: Tabla de Precios --- */
+/* --- Tabla de Precios --- */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -302,12 +295,9 @@ table tr:nth-child(even) {
     background-color: #FAFAFA;
 }
 
-
 /* ==========================================================================
    4. CLASES COMPLEMENTARIAS PARA SCRIPTS (JAVASCRIPT)
    ========================================================================== */
-
-/* --- Estilo Activo para el Menú Inteligente --- */
 nav ul li a.activo {
     color: #FCD34D !important;          
     background-color: #6B1D2F;         
@@ -315,7 +305,6 @@ nav ul li a.activo {
     padding-bottom: 13px;              
 }
 
-/* --- Animaciones para la Aparición Gradual --- */
 .oculto-gradual {
     opacity: 0;
     transform: translateY(30px);       
@@ -327,7 +316,6 @@ nav ul li a.activo {
     opacity: 1;
     transform: translateY(0);          
 }
-
 
 /* ==========================================================================
    5. DISEÑO DE LA VENTANA FLOTANTE (MODAL DE FICHAS TÉCNICAS)
@@ -382,9 +370,8 @@ nav ul li a.activo {
     color: #FCD34D;
 }
 
-
 /* ==========================================================================
-   6. EFECTO INTERACTIVO DE CORTINA DESLIZABLE PARA PRODUCTOS
+   6. SECCIÓN PRODUCTOS: EFECTO INTERACTIVO DE CORTINA (INTEGRADO)
    ========================================================================== */
 .contenedor {
     display: flex;
@@ -396,17 +383,17 @@ nav ul li a.activo {
 .producto {
     background-color: white;
     width: 250px;
-    height: 300px;             /* Altura fija para el control de la cortina */
+    height: 300px;             /* Altura fija ideal para contener la cortina */
     margin: 15px;
     text-align: center;
     border-radius: 12px;
+    border-top: 4px solid #D97706;
     box-shadow: 0px 4px 15px rgba(107, 29, 47, 0.06);
-    position: relative;        /* Eje de coordenadas para los elementos flotantes */
-    overflow: hidden;          /* Recorta la cortina y textos fuera de la tarjeta */
+    position: relative;        
+    overflow: hidden;          /* Corta todo lo que intente salirse de la tarjeta */
     transition: box-shadow 0.3s ease;
 }
 
-/* La imagen ocupa la totalidad del contenedor del producto */
 .producto img {
     width: 100%;
     height: 100%;
@@ -414,11 +401,11 @@ nav ul li a.activo {
     transition: transform 0.5s ease;
 }
 
-/* La cortina de color tinto que se encuentra escondida abajo */
+/* Cortina tinto oculta abajo */
 .producto::before {
     content: "";
     position: absolute;
-    bottom: -100%;             /* Completamente oculta al inicio */
+    bottom: -100%;             
     left: 0;
     width: 100%;
     height: 100%;
@@ -427,21 +414,20 @@ nav ul li a.activo {
     transition: bottom 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Modificación absoluta de textos h3 y p dentro de productos */
+/* Posicionamiento flotante para títulos y precios dentro de productos */
 .producto h3, .producto p {
     position: absolute;
     left: 0;
     width: 100%;
     z-index: 2;
-    color: white !important;   /* Texto blanco para leerse sobre el fondo tinto */
+    color: white !important;   
     margin: 0;
     padding: 0 15px;
     box-sizing: border-box;
-    opacity: 0;                /* Oculto por defecto */
+    opacity: 0;                
     transition: transform 0.4s ease, opacity 0.3s ease;
 }
 
-/* Desplazamiento inicial hacia abajo de las etiquetas de texto */
 .producto h3 {
     bottom: 110px;
     font-size: 1.3rem;
@@ -450,36 +436,30 @@ nav ul li a.activo {
 
 .producto p {
     bottom: 60px;
-    color: #FCD34D !important; /* Destaca el precio en amarillo */
+    color: #FCD34D !important; 
     font-size: 1.4rem;
     font-weight: bold;
     transform: translateY(40px);
 }
 
-/* --- ANIMACIÓN DISPARADA POR EL CURSOR (HOVER) --- */
-
-/* Zoom sutil a la foto */
+/* --- Efectos Hover --- */
 .producto:hover img {
     transform: scale(1.05);
 }
 
-/* La cortina asciende completamente */
 .producto:hover::before {
     bottom: 0;
 }
 
-/* Los textos vuelven a su posición e incrementan opacidad */
 .producto:hover h3, .producto:hover p {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* El precio lleva un micro-retraso dinámico al subir */
 .producto:hover p {
     transition-delay: 0.08s;
 }
 
-/* Resalte de sombra en la tarjeta activa */
 .producto:hover {
     box-shadow: 0px 12px 25px rgba(45, 34, 30, 0.25);
 }
