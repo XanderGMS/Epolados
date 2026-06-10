@@ -552,69 +552,28 @@ nav ul li a.activo {
 }
 
 /* ==========================================================================
-   8. ADAPTABILIDAD PARA MÓVILES (RESPONSIVE DESIGN)
+   8. ADAPTABILIDAD PARA MÓVILES (RESPONSIVE)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* Ajustes para el Header y el Logo de fondo */
-    header {
-        padding: 40px 15px; /* Reducimos el espacio para que no ocupe toda la pantalla */
-        background-position: center center;
-        background-size: contain; /* El logo se encogerá para caber completo sin cortarse */
-        background-color: #521321; /* Fondo de respaldo por si el logo es transparente */
-    }
-
     header h1 {
-        font-size: 2.2rem; /* Texto más pequeño para que no se desborde */
-        letter-spacing: 2px;
-    }
-
-    header p {
-        font-size: 1rem;
-    }
-
-    /* Menú de navegación adaptable */
-    nav {
-        position: static; /* En móviles es mejor que no estorbe arriba al hacer scroll */
+        font-size: 2.5rem; /* Título más chico en celular */
     }
 
     nav ul li {
-        display: block; /* Los botones del menú se apilan uno abajo del otro */
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: block; /* Menú en formato de lista vertical */
     }
 
     nav ul li a {
         padding: 12px;
-        font-size: 0.9rem;
-    }
-    
-    nav ul li a.activo {
-        border-bottom: none;
-        border-left: 4px solid #D97706; /* Cambiamos la línea decorativa al lateral */
-        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
-    /* Ajustes para Imágenes Generales y Banners */
     .banner img {
-        height: 200px; /* Evita que la imagen del banner se vea estirada o gigante */
+        height: 250px; /* Banner más bajo para que no ocupe toda la pantalla */
     }
 
     .galeria img {
-        width: 100%; /* Las fotos de la galería ocuparán el ancho disponible del cel */
+        width: 100%; /* Las fotos de la galería se adaptan al ancho del móvil */
         height: auto;
-    }
-
-    /* Ajuste de cuadrículas (Grids) para que todo pase a una sola columna */
-    #desarrollo ul, 
-    .galeria-fichas,
-    .contenedor {
-        grid-template-columns: 1fr; /* Todo se alinea en una fila perfecta */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .producto {
-        width: 90%; /* Las tarjetas de producto se adaptan al ancho del teléfono */
-        max-width: 280px;
     }
 }
