@@ -552,28 +552,75 @@ nav ul li a.activo {
 }
 
 /* ==========================================================================
-   8. ADAPTABILIDAD PARA MÓVILES (RESPONSIVE)
+   8. ADAPTABILIDAD PARA MÓVILES (VERSIÓN CORREGIDA)
    ========================================================================== */
 @media (max-width: 768px) {
+    /* Ajustes para el Header y el Logo de fondo */
+    header {
+        padding: 50px 10px; /* Reducimos la altura del header en celular */
+        background-position: center center;
+        background-size: 100% 100%; /* Fuerza a la imagen a encajar exactamente en el cuadro */
+    }
+
     header h1 {
-        font-size: 2.5rem; /* Título más chico en celular */
+        font-size: 2rem; /* Título más compacto */
+        letter-spacing: 2px;
+    }
+
+    header p {
+        font-size: 0.95rem;
+    }
+
+    /* Menú de navegación adaptable y más compacto */
+    nav {
+        position: static; 
+    }
+
+    nav ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* ¡Magia! El menú se divide en 2 columnas */
+        background-color: #521321;
     }
 
     nav ul li {
-        display: block; /* Menú en formato de lista vertical */
+        display: block; 
+        border: 0.5px solid rgba(255, 255, 255, 0.05); /* Líneas sutiles entre botones */
     }
 
     nav ul li a {
-        padding: 12px;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 5px; /* Padding pequeño para que no use tanto espacio vertical */
+        font-size: 0.85rem; /* Letra ligeramente más chica para pantallas táctiles */
+        text-align: center;
+    }
+    
+    nav ul li a.activo {
+        border-bottom: 2px solid #D97706;
+        padding-bottom: 8px;
     }
 
+    /* Ajustes para Imágenes Generales y Banner */
     .banner img {
-        height: 250px; /* Banner más bajo para que no ocupe toda la pantalla */
+        height: auto; /* Permite que el banner mantenga su proporción original */
+        max-height: 220px;
     }
 
     .galeria img {
-        width: 100%; /* Las fotos de la galería se adaptan al ancho del móvil */
+        width: 100%; 
         height: auto;
+    }
+
+    /* Ajuste de secciones a una sola columna */
+    #desarrollo ul, 
+    .galeria-fichas,
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .producto {
+        width: 85%;
+        max-width: 260px;
     }
 }
