@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proyecto 3°1</title>
+  <title>Proyecto 3°1 - EPOLADOS</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
 <header>
-  <h1>EPOLADOS</h1>
-  <p>Tan ricos, que quedarán encantados</p>
+  <div class="header-contenido">
+    <h1>EPOLADOS</h1>
+    <p>Tan ricos, que quedarán encantados</p>
+  </div>
 </header>
 
 <nav>
@@ -48,7 +50,7 @@
      <li><img src="Imagenes/leche.jpg" alt="8" width="60"> Leche</li>
      <li><img src="Imagenes/hielo.jpg" alt="9" width="60"> Hielo</li>
      <li><img src="Imagenes/vainilla.jpg" alt="10" width="60"> Vainilla</li>
-     <li><img src="Imagenes/crema.jpg" alt="11 " width="60"> Crema</li>
+     <li><img src="Imagenes/crema.jpg" alt="11" width="60"> Crema</li>
   </ul>
        
   <h3>Proceso</h3>
@@ -146,25 +148,31 @@
 </section>
 
 <section id="precios">
-  <h2>Tabla de Precios</h2>
-  <table>
-    <tr>
-      <th>Producto</th>
-      <th>Precio</th>
-    </tr>
-    <tr>
-      <td>Helado Limón</td>
-      <td>$15</td>
-    </tr>
-    <tr>
-      <td>Helado Galleta</td>
-      <td>$25</td>
-    </tr> 
-    <tr>
-      <td>Extras</td>
-      <td>$6</td>
-    </tr>
-  </table>
+  <h2>Nuestros Precios</h2>
+  <div class="tabla-clasica-contenedor">
+    <table class="tabla-precios-limpia">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Helado de Limón</td>
+          <td class="precio-numero">$15</td>
+        </tr>
+        <tr class="fila-destacada">
+          <td>Helado de Galleta <span class="badge-mini">★</span></td>
+          <td class="precio-numero">$25</td>
+        </tr>
+        <tr>
+          <td>Extras Premium</td>
+          <td class="precio-numero">$6</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 
 <footer>
