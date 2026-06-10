@@ -3,6 +3,10 @@
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
@@ -29,32 +33,48 @@ section h2 {
     font-size: 1.8rem;
 }
 
+
 /* ==========================================================================
    2. ESTRUCTURA PRINCIPAL (HEADER, NAV & FOOTER)
    ========================================================================== */
 header {
-    background-color: #6B1D2F;
-    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Imagenes/logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     text-align: center;
-    padding: 35px 20px;
+    padding: 80px 20px;
+    position: relative;
+}
+
+.header-contenido {
+    position: relative;
+    z-index: 2;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.4rem;
-    letter-spacing: 1px;
+    font-size: 4rem;
+    letter-spacing: 4px;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.9), 0 0 5px rgba(0,0,0,0.5); 
 }
 
 header p {
-    margin-top: 8px;
-    font-size: 1.05rem;
+    margin-top: 12px;
+    font-size: 1.3rem;
     color: #F3EFEA;
     font-style: italic;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.9);
 }
 
 nav {
     background-color: #521321;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
@@ -98,9 +118,12 @@ footer p {
     margin: 4px 0;
 }
 
+
 /* ==========================================================================
    3. ESTILOS DE SECCIONES ESPECÍFICAS
    ========================================================================== */
+
+/* --- Sección: Inicio (Banner) --- */
 .banner img {
     width: 100%;
     height: 400px;
@@ -117,6 +140,7 @@ footer p {
     box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
 
+/* --- Sección: Desarrollo del Producto --- */
 #desarrollo ul {
     list-style: none;
     padding: 0;
@@ -140,7 +164,7 @@ footer p {
 
 #desarrollo ul li img {
     height: 60px; 
-    width: 60px;  
+    width: 60px;   
     object-fit: cover;
     border-radius: 50%;               
     border: 2px solid #EAE4DC;
@@ -163,7 +187,7 @@ footer p {
     line-height: 1.6;
 }
 
-/* --- Fichas Técnicas --- */
+/* --- Sección: Investigación (Fichas Técnicas) --- */
 .galeria-fichas {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -211,7 +235,7 @@ footer p {
     box-shadow: 0 4px 15px rgba(107, 29, 47, 0.15);
 }
 
-/* --- Galería --- */
+/* --- Sección: Galería de Fotos --- */
 .galeria {
     display: flex;
     justify-content: center;
@@ -232,6 +256,7 @@ footer p {
     transform: scale(1.03);
 }
 
+/* --- Sección: Contacto (Contenedor Google Forms) --- */
 .contenedor-formulario {
     max-width: 850px; 
     margin: 20px auto;
@@ -242,6 +267,7 @@ footer p {
     box-sizing: border-box;
 }
 
+/* --- Sección: Video Promocional --- */
 .contenedor-video {
     position: relative;
     padding-bottom: 56.25%; 
@@ -263,37 +289,6 @@ footer p {
     border: 0;
 }
 
-/* --- Tabla de Precios --- */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-    margin-top: 15px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-
-table, th, td {
-    border: 1px solid #EAE4DC;
-}
-
-th {
-    background-color: #6B1D2F;
-    color: white;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-th, td {
-    padding: 14px;
-    text-align: center;
-}
-
-table tr:nth-child(even) {
-    background-color: #FAFAFA;
-}
 
 /* ==========================================================================
    4. CLASES COMPLEMENTARIAS PARA SCRIPTS (JAVASCRIPT)
@@ -317,8 +312,9 @@ nav ul li a.activo {
     transform: translateY(0);          
 }
 
+
 /* ==========================================================================
-   5. DISEÑO DE LA VENTANA FLOTANTE (MODAL DE FICHAS TÉCNICAS)
+   5. DISEÑO DE LA VENTANA FLOTANTE (MODAL)
    ========================================================================== */
 #modal-ficha {
     position: fixed;
@@ -370,8 +366,9 @@ nav ul li a.activo {
     color: #FCD34D;
 }
 
+
 /* ==========================================================================
-   6. SECCIÓN PRODUCTOS: EFECTO INTERACTIVO DE CORTINA (INTEGRADO)
+   6. EFECTO INTERACTIVO PARA PRODUCTOS
    ========================================================================== */
 .contenedor {
     display: flex;
@@ -383,14 +380,13 @@ nav ul li a.activo {
 .producto {
     background-color: white;
     width: 250px;
-    height: 300px;             /* Altura fija ideal para contener la cortina */
+    height: 300px;             
     margin: 15px;
     text-align: center;
     border-radius: 12px;
-    border-top: 4px solid #D97706;
     box-shadow: 0px 4px 15px rgba(107, 29, 47, 0.06);
     position: relative;        
-    overflow: hidden;          /* Corta todo lo que intente salirse de la tarjeta */
+    overflow: hidden;          
     transition: box-shadow 0.3s ease;
 }
 
@@ -401,7 +397,6 @@ nav ul li a.activo {
     transition: transform 0.5s ease;
 }
 
-/* Cortina tinto oculta abajo */
 .producto::before {
     content: "";
     position: absolute;
@@ -414,7 +409,6 @@ nav ul li a.activo {
     transition: bottom 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Posicionamiento flotante para títulos y precios dentro de productos */
 .producto h3, .producto p {
     position: absolute;
     left: 0;
@@ -442,7 +436,6 @@ nav ul li a.activo {
     transform: translateY(40px);
 }
 
-/* --- Efectos Hover --- */
 .producto:hover img {
     transform: scale(1.05);
 }
@@ -462,4 +455,98 @@ nav ul li a.activo {
 
 .producto:hover {
     box-shadow: 0px 12px 25px rgba(45, 34, 30, 0.25);
+}
+
+
+/* ==========================================================================
+   7. TABLA DE PRECIOS CLÁSICA ESTILIZADA
+   ========================================================================== */
+.tabla-clasica-contenedor {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(45, 34, 30, 0.04);
+    border: 1px solid #EAE4DC;
+    overflow: hidden; /* Mantiene las esquinas redondeadas */
+}
+
+.tabla-precios-limpia {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+/* Cabecera de la tabla */
+.tabla-precios-limpia thead tr {
+    background-color: #6B1D2F;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+}
+
+.tabla-precios-limpia th, 
+.tabla-precios-limpia td {
+    padding: 16px 24px;
+}
+
+/* Alineación de la columna de precios */
+.tabla-precios-limpia th:last-child,
+.tabla-precios-limpia td:last-child {
+    text-align: right;
+}
+
+/* Filas del cuerpo de la tabla */
+.tabla-precios-limpia tbody tr {
+    border-bottom: 1px solid #ECE7E1;
+    transition: background-color 0.2s ease;
+}
+
+/* Fondo alternado sutil para romper la monotonía */
+.tabla-precios-limpia tbody tr:nth-of-type(even) {
+    background-color: #FAF9F6;
+}
+
+/* Efecto interactivo al pasar el mouse */
+.tabla-precios-limpia tbody tr:hover {
+    background-color: #F3EFEA;
+}
+
+/* Estilo para los números de los precios */
+.precio-numero {
+    font-weight: 700;
+    color: #6B1D2F;
+    font-size: 1.15rem;
+}
+
+/* Fila destacada (Helado de Galleta) */
+.tabla-precios-limpia tbody tr.fila-destacada {
+    background-color: #FFFDF9;
+}
+
+.tabla-precios-limpia tbody tr.fila-destacada td:first-child {
+    font-weight: 600;
+    color: #6B1D2F;
+}
+
+.tabla-precios-limpia tbody tr.fila-destacada .precio-numero {
+    color: #D97706;
+    font-size: 1.25rem;
+}
+
+/* Pequeño indicador para la opción popular */
+.badge-mini {
+    background-color: #D97706;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 6px;
+    margin-left: 6px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+/* Eliminar el borde de la última fila */
+.tabla-precios-limpia tbody tr:last-of-type {
+    border-bottom: none;
 }
