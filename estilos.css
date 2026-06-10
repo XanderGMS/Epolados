@@ -550,3 +550,30 @@ nav ul li a.activo {
 .tabla-precios-limpia tbody tr:last-of-type {
     border-bottom: none;
 }
+
+/* ==========================================================================
+   8. ADAPTABILIDAD PARA MÓVILES (RESPONSIVE)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem; /* Título más chico en celular */
+    }
+
+    nav ul li {
+        display: block; /* Menú en formato de lista vertical */
+    }
+
+    nav ul li a {
+        padding: 12px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .banner img {
+        height: 250px; /* Banner más bajo para que no ocupe toda la pantalla */
+    }
+
+    .galeria img {
+        width: 100%; /* Las fotos de la galería se adaptan al ancho del móvil */
+        height: auto;
+    }
+}
