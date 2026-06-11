@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto 3°1 - EPOLADOS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
@@ -24,7 +25,8 @@
      <li><a href="#contacto">Contacto</a></li>
      <li><a href="#video">Video</a></li>
      <li><a href="#productos">Productos</a></li>
-     <li><a href="#precios">Precios</a></li> </ul>
+     <li><a href="#precios">Precios</a></li> 
+  </ul>
 </nav>
 
 <section id="inicio" class="banner">
@@ -34,40 +36,85 @@
 
 <section id="desarrollo">
   <h2>Desarrollo del Producto</h2>   
+  
   <h3>Materiales Helado de Limón</h3>
-  <ul>
-     <li><img src="Imagenes/limon.jpg" alt="Limón" width="60"> Limón</li>
-     <li><img src="Imagenes/azucar.jpg" alt="Azúcar" width="60"> Azúcar</li>
-     <li><img src="Imagenes/agua.jpg" alt="Agua" width="60"> Agua</li>
-     <li><img src="Imagenes/sal.jpg" alt="Sal de grano" width="60"> Sal</li>
-     <li><img src="Imagenes/leche.jpg" alt="Leche" width="60"> Leche</li>
+  <ul class="lista-materiales">
+     <li><img src="Imagenes/limon.jpg" alt="Limón fresco"> Limón</li>
+     <li><img src="Imagenes/azucar.jpg" alt="Azúcar refinada"> Azúcar</li>
+     <li><img src="Imagenes/agua.jpg" alt="Agua purificada"> Agua</li>
+     <li><img src="Imagenes/sal.jpg" alt="Sal de grano"> Sal</li>
+     <li><img src="Imagenes/leche.jpg" alt="Leche entera"> Leche</li>
   </ul>
  
   <h3>Materiales Helado de Galleta</h3>
-  <ul>
-     <li><img src="Imagenes/galletas.jpg" alt="Galletas de chocolate" width="60"> Galletas</li>
-     <li><img src="Imagenes/azucar.jpg" alt="Azúcar" width="60"> Azúcar</li>
-     <li><img src="Imagenes/leche.jpg" alt="Leche" width="60"> Leche</li>
-     <li><img src="Imagenes/hielo.jpg" alt="Hielo" width="60"> Hielo</li>
-     <li><img src="Imagenes/vainilla.jpg" alt="Esencia de vainilla" width="60"> Vainilla</li>
-     <li><img src="Imagenes/crema.jpg" alt="Crema de leche" width="60"> Cream</li>
-  </ul>
-       
-  <h3>Proceso</h3>
-  <h4>NIEVE DE LIMÓN</h4>
-  <ol>
-     <li><strong>Preparación del jarabe base:</strong> Se calienta agua con el endulzante natural y un estabilizante. Esto se pasteuriza para disolver todo perfectamente.</li>
-     <li><strong>Enfriamiento:</strong> Se deja reposar en refrigeración de 4 a 12 horas para que el estabilizante actúe y retenga el H₂O.</li>
-     <li><strong>Incorporación del limón:</strong> Vertemos el jugo de limón fresco en el envase de acero donde se encuentra el endulzante.</li>
-     <li><strong>Congelación artesanal:</strong> En un envase más grande vertemos hielo y le esparcimos sal de grano, posteriormente introducimos el envase de acero y se gira continuamente por las asas. Conforme las paredes del envase se congelan, se utiliza una pala de madera para despegar la nieve congelada y moverla al centro.</li>
-  </ol>
+  <ul class="lista-materiales">
+     <li><img src="Imagenes/galletas.jpg" alt="Galletas de chocolate"> Galletas</li>
+     <li><img src="Imagenes/azucar.jpg" alt="Azúcar mascabada"> Azúcar</li>
+     <li><img src="Imagenes/leche.jpg" alt="Leche descremada"> Leche</li>
+     <li><img src="Imagenes/hielo.jpg" alt="Hielo cristalino"> Hielo</li>
+     <li><img src="Imagenes/crema.jpg" alt="Crema de leche fresca"> Crema</li> </ul>
+        
+  <div class="proceso-visual">
+    <h3>Nuestro Proceso Artesanal</h3>
+    
+    <div class="proceso-grid">
+      <div class="proceso-bloque nieve">
+        <h4><i class="fa-solid fa-lemon"></i> NIEVE DE LIMÓN</h4>
+        <div class="paso">
+          <span class="paso-numero">1</span>
+          <div class="paso-texto">
+            <strong>Jarabe base:</strong> Calentamos agua con endulzante y estabilizante hasta disolver.
+          </div>
+        </div>
+        <div class="paso">
+          <span class="paso-numero">2</span>
+          <div class="paso-texto">
+            <strong>Enfriamiento:</strong> Reposo en frío de 4 a 12 horas para retener el H₂O.
+          </div>
+        </div>
+        <div class="paso">
+          <span class="paso-numero">3</span>
+          <div class="paso-texto">
+            <strong>Sabor:</strong> Incorporamos el jugo de limón recién exprimido a la mezcla.
+          </div>
+        </div>
+        <div class="paso">
+          <span class="paso-numero">4</span>
+          <div class="paso-texto">
+            <strong>Congelación:</strong> Batido en envase de acero con hielo y sal de grano.
+          </div>
+        </div>
+      </div>
 
-  <h4>HELADO DE GALLETA</h4>
-  <ol>
-     <li><strong>Base licuada:</strong> Se mezclan los lácteos, endulzante natural, leche en polvo y el estabilizante.</li>
-     <li><strong>Maduración e infusión:</strong> Se calienta la mezcla y se enfría de golpe para dejar reposar en refrigeración entre 6 y 24 horas (no olvidando infusionar algunas galletas de chocolate en la mezcla caliente).</li>
-     <li><strong>Mantecación y troceado:</strong> El proceso de batido es el mismo que el de la nieve de limón. Cuando el helado alcanza una consistencia pastosa y firme, se retira la pala de madera y se incorporan más trozos de cookie o chispas de chocolate.</li>
-  </ol> 
+      <div class="proceso-bloque galleta">
+        <h4><i class="fa-solid fa-cookie"></i> HELADO DE GALLETA</h4>
+        <div class="paso">
+          <span class="paso-numero">1</span>
+          <div class="paso-texto">
+            <strong>Base láctea:</strong> Mezcla de lácteos, leche en polvo y estabilizante.
+          </div>
+        </div>
+        <div class="paso">
+          <span class="paso-numero">2</span>
+          <div class="paso-texto">
+            <strong>Maduración:</strong> Choque térmico e infusión de galletas por 6-24 horas.
+          </div>
+        </div>
+        <div class="paso">
+          <span class="paso-numero">3</span>
+          <div class="paso-texto">
+            <strong>Mantecación:</strong> Batido artesanal hasta lograr una textura firme.
+          </div>
+        </div>
+        <div class="paso">
+          <span class="paso-numero">4</span>
+          <div class="paso-texto">
+            <strong>Finalizado:</strong> Incorporación de trozos crujientes de chocolate y cookie.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="investigacion">
@@ -109,7 +156,7 @@
 <section id="contacto">
   <h2>Contáctanos</h2>
   <div class="contenedor-formulario">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYVDD5Fcg23GA5MeqJ_ULOXAEHf1K0qHyz-A3tDYBLEUJMcA/viewform?embedded=true" width="100%" height="800" style="border:0;" allowfullscreen>Cargando…</iframe>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYVDD5Fcg23GA5MeqJ_ULOXAEHf1K0qHyz-A3tDYBLEUJMcA/viewform?embedded=true" width="100%" height="800" style="border:0;" allowfullscreen>Cargando formulario...</iframe>
   </div>
 </section>
 
@@ -122,7 +169,8 @@
       frameborder="0" 
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
       allowfullscreen>
-     Popups e iframes</iframe>
+      Tu navegador no soporta iframes. Mira el video directamente en Streamable.
+    </iframe>
   </div>
 </section>
 
@@ -186,76 +234,76 @@
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    
-    // 1. MENÚ INTELIGENTE DE NAVEGACIÓN
-    const secciones = document.querySelectorAll("section[id]");
-    const enlacesNav = document.querySelectorAll("nav ul li a");
+document.addEventListener("DOMContentLoaded", () => {
+  
+  // 1. MENÚ INTELIGENTE DE NAVEGACIÓN
+  const secciones = document.querySelectorAll("section[id]");
+  const enlacesNav = document.querySelectorAll("nav ul li a");
 
-    window.addEventListener("scroll", () => {
-      let actual = "";
-      const scrollPos = window.scrollY + 120;
+  window.addEventListener("scroll", () => {
+    let actual = "";
+    const scrollPos = window.scrollY + 120;
 
-      secciones.forEach((seccion) => {
-        const seccionTop = seccion.offsetTop;
-        if (scrollPos >= seccionTop) {
-          actual = seccion.getAttribute("id");
-        }
-      });
-
-      enlacesNav.forEach((enlace) => {
-        enlace.classList.remove("activo");
-        if (enlace.getAttribute("href") === `#${actual}`) {
-          enlace.classList.add("activo");
-        }
-      });
+    secciones.forEach((seccion) => {
+      const seccionTop = seccion.offsetTop;
+      if (scrollPos >= seccionTop) {
+        actual = seccion.getAttribute("id");
+      }
     });
 
-    // 2. EFECTO DE APARICIÓN GRADUAL
-    const elementosAparicion = document.querySelectorAll(".producto, .tarjeta-ficha-img, .galeria img, #desarrollo h3");
-    
-    elementosAparicion.forEach(el => el.classList.add("oculto-gradual"));
-
-    const observador = new IntersectionObserver((entradas) => {
-      entradas.forEach((entrada) => {
-        if (entrada.isIntersecting) {
-          entrada.target.classList.add("visible-gradual");
-          observador.unobserve(entrada.target);
-        }
-      });
-    }, {
-      threshold: 0.15
+    enlacesNav.forEach((enlace) => {
+      enlace.classList.remove("activo");
+      if (enlace.getAttribute("href") === `#${actual}`) {
+        enlace.classList.add("activo");
+      }
     });
-
-    elementosAparicion.forEach((elemento) => {
-      observador.observe(elemento);
-    });
-
-    // 3. APERTURA E INTERACCIÓN DE FICHAS TÉCNICAS (MODAL)
-    const modal = document.getElementById("modal-ficha");
-    const imgModal = document.getElementById("img-modal");
-    const botonCerrar = document.querySelector(".boton-cerrar");
-    const imagenesFichas = document.querySelectorAll(".tarjeta-ficha-img img");
-
-    imagenesFichas.forEach((img) => {
-      img.addEventListener("click", () => {
-        modal.classList.remove("modal-oculto");
-        modal.classList.add("modal-visible");
-        imgModal.src = img.src;
-      });
-    });
-
-    const cerrarModal = () => {
-      modal.classList.remove("modal-visible");
-      modal.classList.add("modal-oculto");
-    };
-
-    botonCerrar.addEventListener("click", cerrarModal);
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) { cerrarModal(); }
-    });
-
   });
+
+  // 2. EFECTO DE APARICIÓN GRADUAL (CORREGIDO PARA NUEVOS ELEMENTOS)
+  const elementosAparicion = document.querySelectorAll(".producto, .tarjeta-ficha-img, .galeria img, #desarrollo h3, .proceso-bloque");
+  
+  elementosAparicion.forEach(el => el.classList.add("oculto-gradual"));
+
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach((entrada) => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add("visible-gradual");
+        observador.unobserve(entrada.target);
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  elementosAparicion.forEach((elemento) => {
+    observador.observe(elemento);
+  });
+
+  // 3. APERTURA E INTERACCIÓN DE FICHAS TÉCNICAS (MODAL)
+  const modal = document.getElementById("modal-ficha");
+  const imgModal = document.getElementById("img-modal");
+  const botonCerrar = document.querySelector(".boton-cerrar");
+  const imagenesFichas = document.querySelectorAll(".tarjeta-ficha-img img");
+
+  imagenesFichas.forEach((img) => {
+    img.addEventListener("click", () => {
+      modal.classList.remove("modal-oculto");
+      modal.classList.add("modal-visible");
+      imgModal.src = img.src;
+    });
+  });
+
+  const cerrarModal = () => {
+    modal.classList.remove("modal-visible");
+    modal.classList.add("modal-oculto");
+  };
+
+  botonCerrar.addEventListener("click", cerrarModal);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) { cerrarModal(); }
+  });
+
+});
 </script>
 
 </body>
