@@ -20,16 +20,17 @@ h1, h2, h3, h4 {
 }
 
 section {
-    padding: 40px 20px;
+    padding: 60px 20px;
     max-width: 1100px;
     margin: 0 auto;
+    clear: both; /* Evita que elementos flotantes previos arruinen el diseño */
 }
 
 section h2 {
     color: #6B1D2F;
     border-bottom: 2px solid #D97706;
     padding-bottom: 8px;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
     font-size: 1.8rem;
 }
 
@@ -71,7 +72,6 @@ header p {
 nav {
     background-color: #521321;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: -webkit-sticky; 
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -129,6 +129,7 @@ footer p {
     height: 400px;
     object-fit: cover;
     display: block;
+    border-radius: 8px;
 }
 
 .banner p {
@@ -140,7 +141,7 @@ footer p {
     box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
 
-/* --- Sección: Desarrollo del Producto --- */
+/* --- Sección: Desarrollo del Producto (Materiales) --- */
 #desarrollo ul {
     list-style: none;
     padding: 0;
@@ -170,22 +171,77 @@ footer p {
     border: 2px solid #EAE4DC;
 }
 
-#desarrollo ol {
-    padding-left: 20px;
-    margin-bottom: 25px;
+/* --- NUEVO DISEÑO DE PROCESO VISUAL --- */
+.proceso-visual {
+    margin-top: 40px;
+    padding-top: 20px;
 }
 
-#desarrollo ol li {
-    font-size: 1.2rem; 
-    line-height: 1.6;
-    margin-bottom: 12px;
+.proceso-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.proceso-bloque {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    border: 1px solid #ECE7E1;
+}
+
+.proceso-bloque h4 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #EBF0F5;
+}
+
+/* Colores de títulos por bloques */
+.proceso-bloque.nieve h4 { color: #84CC16; }
+.proceso-bloque.galleta h4 { color: #78350F; }
+
+.paso {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 18px;
+    align-items: flex-start;
+}
+
+.paso:last-child {
+    margin-bottom: 0;
+}
+
+.paso-numero {
+    background-color: #6B1D2F;
+    color: white;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.paso-texto {
+    font-size: 1.1rem;
+    line-height: 1.5;
     color: #2D221E;
 }
 
-#desarrollo p {
-    font-size: 1.2rem; 
-    line-height: 1.6;
+.paso-texto strong {
+    color: #6B1D2F;
 }
+
 
 /* --- Sección: Investigación (Fichas Técnicas) --- */
 .galeria-fichas {
@@ -256,7 +312,7 @@ footer p {
     transform: scale(1.03);
 }
 
-/* --- Sección: Contacto (Contenedor Google Forms) --- */
+/* --- Sección: Contacto --- */
 .contenedor-formulario {
     max-width: 850px; 
     margin: 20px auto;
@@ -468,7 +524,7 @@ nav ul li a.activo {
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(45, 34, 30, 0.04);
     border: 1px solid #EAE4DC;
-    overflow: hidden; /* Mantiene las esquinas redondeadas */
+    overflow: hidden;
 }
 
 .tabla-precios-limpia {
@@ -477,7 +533,6 @@ nav ul li a.activo {
     text-align: left;
 }
 
-/* Cabecera de la tabla */
 .tabla-precios-limpia thead tr {
     background-color: #6B1D2F;
     color: white;
@@ -490,36 +545,30 @@ nav ul li a.activo {
     padding: 16px 24px;
 }
 
-/* Alineación de la columna de precios */
 .tabla-precios-limpia th:last-child,
 .tabla-precios-limpia td:last-child {
     text-align: right;
 }
 
-/* Filas del cuerpo de la tabla */
 .tabla-precios-limpia tbody tr {
     border-bottom: 1px solid #ECE7E1;
     transition: background-color 0.2s ease;
 }
 
-/* Fondo alternado sutil para romper la monotonía */
 .tabla-precios-limpia tbody tr:nth-of-type(even) {
     background-color: #FAF9F6;
 }
 
-/* Efecto interactivo al pasar el mouse */
 .tabla-precios-limpia tbody tr:hover {
     background-color: #F3EFEA;
 }
 
-/* Estilo para los números de los precios */
 .precio-numero {
     font-weight: 700;
     color: #6B1D2F;
     font-size: 1.15rem;
 }
 
-/* Fila destacada (Helado de Galleta) */
 .tabla-precios-limpia tbody tr.fila-destacada {
     background-color: #FFFDF9;
 }
@@ -534,7 +583,6 @@ nav ul li a.activo {
     font-size: 1.25rem;
 }
 
-/* Pequeño indicador para la opción popular */
 .badge-mini {
     background-color: #D97706;
     color: white;
@@ -546,24 +594,23 @@ nav ul li a.activo {
     display: inline-block;
 }
 
-/* Eliminar el borde de la última fila */
 .tabla-precios-limpia tbody tr:last-of-type {
     border-bottom: none;
 }
 
+
 /* ==========================================================================
-   8. ADAPTABILIDAD PARA MÓVILES (VERSIÓN CORREGIDA)
+   8. ADAPTABILIDAD PARA MÓVILES
    ========================================================================== */
 @media (max-width: 768px) {
-    /* Ajustes para el Header y el Logo de fondo */
     header {
-        padding: 50px 10px; /* Reducimos la altura del header en celular */
+        padding: 50px 10px;
         background-position: center center;
-        background-size: 100% 100%; /* Fuerza a la imagen a encajar exactamente en el cuadro */
+        background-size: cover; 
     }
 
     header h1 {
-        font-size: 2rem; /* Título más compacto */
+        font-size: 2rem;
         letter-spacing: 2px;
     }
 
@@ -571,25 +618,24 @@ nav ul li a.activo {
         font-size: 0.95rem;
     }
 
-    /* Menú de navegación adaptable y más compacto */
     nav {
         position: static; 
     }
 
     nav ul {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* ¡Magia! El menú se divide en 2 columnas */
+        grid-template-columns: repeat(2, 1fr);
         background-color: #521321;
     }
 
     nav ul li {
         display: block; 
-        border: 0.5px solid rgba(255, 255, 255, 0.05); /* Líneas sutiles entre botones */
+        border: 0.5px solid rgba(255, 255, 255, 0.05);
     }
 
     nav ul li a {
-        padding: 10px 5px; /* Padding pequeño para que no use tanto espacio vertical */
-        font-size: 0.85rem; /* Letra ligeramente más chica para pantallas táctiles */
+        padding: 10px 5px;
+        font-size: 0.85rem;
         text-align: center;
     }
     
@@ -598,9 +644,8 @@ nav ul li a.activo {
         padding-bottom: 8px;
     }
 
-    /* Ajustes para Imágenes Generales y Banner */
     .banner img {
-        height: auto; /* Permite que el banner mantenga su proporción original */
+        height: auto;
         max-height: 220px;
     }
 
@@ -609,7 +654,11 @@ nav ul li a.activo {
         height: auto;
     }
 
-    /* Ajuste de secciones a una sola columna */
+    /* Cambio del Proceso a una sola columna en pantallas táctiles */
+    .proceso-grid {
+        grid-template-columns: 1fr;
+    }
+
     #desarrollo ul, 
     .galeria-fichas,
     .contenedor {
