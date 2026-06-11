@@ -171,7 +171,7 @@ footer p {
     border: 2px solid #EAE4DC;
 }
 
-/* --- NUEVO DISEÑO DE PROCESO VISUAL --- */
+/* --- PROCESO VISUAL EN DOS BLOQUES --- */
 .proceso-visual {
     margin-top: 40px;
     padding-top: 20px;
@@ -203,7 +203,6 @@ footer p {
     border-bottom: 2px solid #EBF0F5;
 }
 
-/* Colores de títulos por bloques */
 .proceso-bloque.nieve h4 { color: #84CC16; }
 .proceso-bloque.galleta h4 { color: #78350F; }
 
@@ -600,7 +599,7 @@ nav ul li a.activo {
 
 
 /* ==========================================================================
-   8. ADAPTABILIDAD PARA MÓVILES
+   8. ADAPTABILIDAD PARA MÓVILES (CON MENÚ STICKY RECONSTRUIDO)
    ========================================================================== */
 @media (max-width: 768px) {
     header {
@@ -618,8 +617,12 @@ nav ul li a.activo {
         font-size: 0.95rem;
     }
 
+    /* Modificación exitosa: Ahora flota arriba en móviles de forma correcta */
     nav {
-        position: static; 
+        position: sticky; 
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
 
     nav ul {
@@ -634,14 +637,14 @@ nav ul li a.activo {
     }
 
     nav ul li a {
-        padding: 10px 5px;
+        padding: 12px 5px;
         font-size: 0.85rem;
         text-align: center;
     }
     
     nav ul li a.activo {
         border-bottom: 2px solid #D97706;
-        padding-bottom: 8px;
+        padding-bottom: 10px;
     }
 
     .banner img {
@@ -654,7 +657,6 @@ nav ul li a.activo {
         height: auto;
     }
 
-    /* Cambio del Proceso a una sola columna en pantallas táctiles */
     .proceso-grid {
         grid-template-columns: 1fr;
     }
