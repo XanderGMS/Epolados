@@ -37,8 +37,8 @@
 <section id="desarrollo">
   <h2>Desarrollo del Producto</h2>   
   
-  <h3>Materiales Helado de Limón</h3>
-  <ul class="lista-materiales">
+  <h3 class="oculto-gradual">Materiales Helado de Limón</h3>
+  <ul>
      <li><img src="Imagenes/limon.jpg" alt="Limón fresco"> Limón</li>
      <li><img src="Imagenes/azucar.jpg" alt="Azúcar refinada"> Azúcar</li>
      <li><img src="Imagenes/agua.jpg" alt="Agua purificada"> Agua</li>
@@ -46,19 +46,20 @@
      <li><img src="Imagenes/leche.jpg" alt="Leche entera"> Leche</li>
   </ul>
  
-  <h3>Materiales Helado de Galleta</h3>
-  <ul class="lista-materiales">
+  <h3 class="oculto-gradual">Materiales Helado de Galleta</h3>
+  <ul>
      <li><img src="Imagenes/galletas.jpg" alt="Galletas de chocolate"> Galletas</li>
      <li><img src="Imagenes/azucar.jpg" alt="Azúcar mascabada"> Azúcar</li>
      <li><img src="Imagenes/leche.jpg" alt="Leche descremada"> Leche</li>
      <li><img src="Imagenes/hielo.jpg" alt="Hielo cristalino"> Hielo</li>
-     <li><img src="Imagenes/crema.jpg" alt="Crema de leche fresca"> Crema</li> </ul>
+     <li><img src="Imagenes/crema.jpg" alt="Crema de leche fresca"> Crema</li> 
+  </ul>
         
   <div class="proceso-visual">
     <h3>Nuestro Proceso Artesanal</h3>
     
     <div class="proceso-grid">
-      <div class="proceso-bloque nieve">
+      <div class="proceso-bloque nieve oculto-gradual">
         <h4><i class="fa-solid fa-lemon"></i> NIEVE DE LIMÓN</h4>
         <div class="paso">
           <span class="paso-numero">1</span>
@@ -86,7 +87,7 @@
         </div>
       </div>
 
-      <div class="proceso-bloque galleta">
+      <div class="proceso-bloque galleta oculto-gradual">
         <h4><i class="fa-solid fa-cookie"></i> HELADO DE GALLETA</h4>
         <div class="paso">
           <span class="paso-numero">1</span>
@@ -120,23 +121,23 @@
 <section id="investigacion">
   <h2>Investigación del Producto</h2>
   <div class="galeria-fichas">
-    <div class="tarjeta-ficha-img">
+    <div class="tarjeta-ficha-img oculto-gradual">
        <h3>Ficha Técnica Helado De Limón</h3>
        <img src="Imagenes/ficha_limon.jpg" alt="Ficha Técnica Helado de Limón">
     </div>
-    <div class="tarjeta-ficha-img">
+    <div class="tarjeta-ficha-img oculto-gradual">
        <h3>Ficha Técnica Helado De Galleta</h3>
        <img src="Imagenes/ficha_galleta.jpg" alt="Ficha Técnica Helado de Galleta">
     </div>
-    <div class="tarjeta-ficha-img">
+    <div class="tarjeta-ficha-img oculto-gradual">
        <h3>Ficha Técnica Jugo De Limón</h3>
        <img src="Imagenes/ficha_jugo_limon.jpg" alt="Ficha Técnica Jugo de Limón">
     </div>
-    <div class="tarjeta-ficha-img">
+    <div class="tarjeta-ficha-img oculto-gradual">
        <h3>Ficha Técnica Galleta De Chocolate</h3>
        <img src="Imagenes/ficha_galleta_choco.jpg" alt="Ficha Técnica Galleta de Chocolate">
     </div>
-    <div class="tarjeta-ficha-img">
+    <div class="tarjeta-ficha-img oculto-gradual">
        <h3>Ficha Técnica Azúcar Mascabada</h3>
        <img src="Imagenes/ficha_azucar.jpg" alt="Ficha Técnica Azúcar Mascabada">
     </div>
@@ -146,10 +147,10 @@
 <section id="galeria">
   <h2>Galería</h2>
   <div class="galeria">
-    <img src="Imagenes/Phelado.jpg" alt="Preparación del helado artesanal">
-    <img src="Imagenes/Pproducto.png" alt="Nuestro equipo trabajando">
-    <img src="Imagenes/Hgalleta.png" alt="Helado de galleta listo">
-    <img src="Imagenes/Hlimon.jpeg" alt="Helado de limón listo">
+    <img class="oculto-gradual" src="Imagenes/Phelado.jpg" alt="Preparación del helado artesanal">
+    <img class="oculto-gradual" src="Imagenes/Pproducto.png" alt="Nuestro equipo trabajando">
+    <img class="oculto-gradual" src="Imagenes/Hgalleta.jpg" alt="Helado de galleta listo">
+    <img class="oculto-gradual" src="Imagenes/Hlimon.jpeg" alt="Helado de limón listo">
   </div>
 </section>
 
@@ -162,32 +163,45 @@
 
 <section id="video">
   <h2>Video Promocional</h2>
-  <div class="contenedor-video">
-    <iframe 
-      src="https://streamable.com/e/ve6p34" 
-      title="Video promocional EPOLADOS" 
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      allowfullscreen>
-      Tu navegador no soporta iframes. Mira el video directamente en Streamable.
-    </iframe>
+  <div class="carrusel-video-contenedor">
+    
+    <button class="flecha-video prev" id="btn-video-prev" aria-label="Video anterior">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <div class="contenedor-video">
+      <iframe 
+        id="reproductor-pymes"
+        src="https://streamable.com/e/qz0ayc" 
+        title="Video promocional EPOLADOS" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+        Tu navegador no soporta iframes.
+      </iframe>
+    </div>
+
+    <button class="flecha-video next" id="btn-video-next" aria-label="Siguiente video">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+    
   </div>
 </section>
 
 <section id="productos">
   <h2>Productos</h2>
   <div class="contenedor">
-    <div class="producto">
+    <div class="producto oculto-gradual">
       <img src="Imagenes/producto1.jpg" alt="Helado Limón">
       <h3>Helado de Limón</h3>
       <p>$15</p>
     </div>
-    <div class="producto">
+    <div class="producto oculto-gradual">
       <img src="Imagenes/producto2.jpg" alt="Helado Galleta">
       <h3>Helado Galleta</h3>
       <p>$25</p>
     </div>
-    <div class="producto">
+    <div class="producto oculto-gradual">
       <img src="Imagenes/producto3.jpg" alt="Extras">
       <h3>Extras</h3>
       <p>$6</p>
@@ -259,11 +273,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 2. EFECTO DE APARICIÓN GRADUAL (CORREGIDO PARA NUEVOS ELEMENTOS)
-  const elementosAparicion = document.querySelectorAll(".producto, .tarjeta-ficha-img, .galeria img, #desarrollo h3, .proceso-bloque");
+  // 2. EFECTO DE APARICIÓN GRADUAL CON INTERSECTION OBSERVER
+  const elementosAparicion = document.querySelectorAll(".oculto-gradual");
   
-  elementosAparicion.forEach(el => el.classList.add("oculto-gradual"));
-
   const observador = new IntersectionObserver((entradas) => {
     entradas.forEach((entrada) => {
       if (entrada.isIntersecting) {
@@ -302,6 +314,43 @@ document.addEventListener("DOMContentLoaded", () => {
   modal.addEventListener("click", (e) => {
     if (e.target === modal) { cerrarModal(); }
   });
+
+  // 4. CARRUSEL DE VIDEOS (CAMBIO POR FLECHAS + REDIMENSIONADO DINÁMICO)
+  const iframeVideo = document.getElementById("reproductor-pymes");
+  const btnPrev = document.getElementById("btn-video-prev");
+  const btnNext = document.getElementById("btn-video-next");
+
+  const videosStreamable = [
+    "qz0ayc", 
+    "11i9ef" 
+  ];
+  
+  let indiceVideoActual = 0;
+
+  function actualizarVideo(indice) {
+    if (iframeVideo) {
+      iframeVideo.src = `https://streamable.com/e/${videosStreamable[indice]}`;
+      
+      // MODIFICACIÓN PEDIDA: El segundo video (índice 1) se amplía un 15% de forma independiente
+      if (indice === 1) {
+        iframeVideo.style.transform = "scale(1.15)";
+      } else {
+        iframeVideo.style.transform = "scale(1)";
+      }
+    }
+  }
+
+  if (btnPrev && btnNext) {
+    btnPrev.addEventListener("click", () => {
+      indiceVideoActual = (indiceVideoActual - 1 + videosStreamable.length) % videosStreamable.length;
+      actualizarVideo(indiceVideoActual);
+    });
+
+    btnNext.addEventListener("click", () => {
+      indiceVideoActual = (indiceVideoActual + 1) % videosStreamable.length;
+      actualizarVideo(indiceVideoActual);
+    });
+  }
 
 });
 </script>
